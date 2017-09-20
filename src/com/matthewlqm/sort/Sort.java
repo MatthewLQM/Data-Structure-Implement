@@ -1,7 +1,5 @@
 package com.matthewlqm.sort;
 
-import com.matthewlqm.util.CommonUtils;
-
 public class Sort {
 
     public static Integer[] insertSort(Integer[] originArray) {
@@ -30,15 +28,6 @@ public class Sort {
         Integer[] left = mergeSort(leftArray);
         Integer[] right = mergeSort(rightArray);
         return merge(left, right);
-    }
-
-    public static void main(String[] args) {
-        Integer[] originArray = new Integer[]{2, 1};
-        Integer[] insertSortResult = Sort.insertSort(originArray);
-        Integer[] mergeSortResult = Sort.mergeSort(originArray);
-        CommonUtils.printArray("originArray", originArray);
-        CommonUtils.printArray("insertSortResult", insertSortResult);
-        CommonUtils.printArray("mergeSortArray",mergeSortResult);
     }
 
     private static Integer[] merge(Integer[] left, Integer[] right) {
