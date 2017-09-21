@@ -19,4 +19,12 @@ public class SortTest {
         Integer[] expectedSortedArray = new Integer[]{1, 2, 3, 4, 5};
         Assert.assertArrayEquals(expectedSortedArray, mergeSortArray);
     }
+
+    @Test
+    public void testBubbleSort() {
+        Integer[] originArray = new Integer[]{1, 4, 3, 2, 5};
+        Integer[] mergeSortArray = Sort.bubbleSort(originArray);
+        Integer[] expectedSortedArray = new Integer[]{1, 2, 3, 4, 5};
+        Assert.assertArrayEquals(expectedSortedArray, mergeSortArray);
+    }
 }
