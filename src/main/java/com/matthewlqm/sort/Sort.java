@@ -30,6 +30,21 @@ public class Sort {
         return merge(left, right);
     }
 
+    public static Integer[] bubbleSort(Integer[] originArray) {
+        Integer[] result = new Integer[originArray.length];
+        System.arraycopy(originArray, 0, result, 0, originArray.length);
+        for(int i = 0; i < result.length - 1; i++){
+            for(int j = i + 1; j < result.length; j++) {
+                if(result[i] > result[j]) {
+                    int temp = result[i];
+                    result[i] = result[j];
+                    result[j] = temp;
+                }
+            }
+        }
+        return result;
+    }
+
     private static Integer[] merge(Integer[] left, Integer[] right) {
         Integer[] result = new Integer[left.length + right.length];
         int leftIndex = 0, rightIndex = 0, index = 0;

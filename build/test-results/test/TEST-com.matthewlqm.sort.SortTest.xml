@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.matthewlqm.sort.SortTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-09-21T15:49:12" hostname="PC20170705lpj" time="0.003">
+  <properties/>
+  <testcase name="testMergeSort" classname="com.matthewlqm.sort.SortTest" time="0.002"/>
+  <testcase name="testBubbleSort" classname="com.matthewlqm.sort.SortTest" time="0.0"/>
+  <testcase name="testInsertSort" classname="com.matthewlqm.sort.SortTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
