@@ -1,13 +1,22 @@
 package com.matthewlqm.sort;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-public class SortTest {
+public class SortManagerTest {
+
+    private SortManager sortManagerManager;
+
+    @Before
+    public void beforeTest() {
+        sortManagerManager = new SortManager();
+    }
+
     @Test
     public void testInsertSort() {
         Integer[] originArray = new Integer[]{1, 4, 3, 2, 5};
-        Integer[] insertSortArray = Sort.insertSort(originArray);
+        Integer[] insertSortArray = sortManagerManager.insertSort(originArray);
         Integer[] expectedSortedArray = new Integer[]{1, 2, 3, 4, 5};
         Assert.assertArrayEquals(expectedSortedArray, insertSortArray);
     }
@@ -15,7 +24,7 @@ public class SortTest {
     @Test
     public void testMergeSort() {
         Integer[] originArray = new Integer[]{1, 4, 3, 2, 5};
-        Integer[] mergeSortArray = Sort.mergeSort(originArray);
+        Integer[] mergeSortArray = sortManagerManager.mergeSort(originArray);
         Integer[] expectedSortedArray = new Integer[]{1, 2, 3, 4, 5};
         Assert.assertArrayEquals(expectedSortedArray, mergeSortArray);
     }
@@ -23,7 +32,7 @@ public class SortTest {
     @Test
     public void testBubbleSort() {
         Integer[] originArray = new Integer[]{1, 4, 3, 2, 5};
-        Integer[] mergeSortArray = Sort.bubbleSort(originArray);
+        Integer[] mergeSortArray = sortManagerManager.bubbleSort(originArray);
         Integer[] expectedSortedArray = new Integer[]{1, 2, 3, 4, 5};
         Assert.assertArrayEquals(expectedSortedArray, mergeSortArray);
     }

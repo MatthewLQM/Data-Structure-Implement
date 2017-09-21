@@ -1,8 +1,8 @@
 package com.matthewlqm.sort;
 
-public class Sort {
+public class SortManager {
 
-    public static Integer[] insertSort(Integer[] originArray) {
+    public Integer[] insertSort(Integer[] originArray) {
         Integer[] temp = new Integer[originArray.length];
         temp[0] = originArray[0];
         for (int i = 1; i < originArray.length; i++) {
@@ -17,7 +17,7 @@ public class Sort {
         return temp;
     }
 
-    public static Integer[] mergeSort(Integer[] originArray) {
+    public Integer[] mergeSort(Integer[] originArray) {
         if (originArray.length == 1) {
             return originArray;
         }
@@ -30,7 +30,7 @@ public class Sort {
         return merge(left, right);
     }
 
-    public static Integer[] bubbleSort(Integer[] originArray) {
+    public Integer[] bubbleSort(Integer[] originArray) {
         Integer[] result = new Integer[originArray.length];
         System.arraycopy(originArray, 0, result, 0, originArray.length);
         for(int i = 0; i < result.length - 1; i++){
@@ -45,7 +45,7 @@ public class Sort {
         return result;
     }
 
-    private static Integer[] merge(Integer[] left, Integer[] right) {
+    private Integer[] merge(Integer[] left, Integer[] right) {
         Integer[] result = new Integer[left.length + right.length];
         int leftIndex = 0, rightIndex = 0, index = 0;
         while (leftIndex < left.length && rightIndex < right.length) {
