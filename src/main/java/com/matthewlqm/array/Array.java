@@ -1,29 +1,54 @@
 package com.matthewlqm.array;
 
-public class Array {
+import com.matthewlqm.node.Node;
+import com.matthewlqm.node.NormalNode;
+
+public class Array<T> {
 
     private static final int DEFAULT_ARRAY_CAPACITY = 16;
 
-    private Integer[] element;
+    private Node<T>[] element;
 
     public Array() {
-        element = new Integer[DEFAULT_ARRAY_CAPACITY];
+        element = new NormalNode[DEFAULT_ARRAY_CAPACITY];
     }
 
     public Array(int capacity) {
-        element = new Integer[capacity];
+        element = new NormalNode[capacity];
     }
 
-    public void setElementWithIndex(Integer value, int index) {
+    public int size() {
+        return element.length;
+    }
+
+    public void copyArray(Array<T> src, int begin, int end) {
+        if (begin > end || begin < 0 || end >= src.size()) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        if (end - begin >= element.length - 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        for (int i = begin; i < end; i++) {
+            Node temp = src.getElementWithIndex(i);
+            if (temp != null) {
+                element[i - begin] = src.getElementWithIndex(i);
+            }
+        }
+    }
+
+    public void setElementWithIndex(T value, int index) {
         if (index >= element.length) {
             throw new ArrayIndexOutOfBoundsException();
         }
-        element[index] = value;
+        element[index] = new NormalNode<>(value);
     }
 
-    public Integer getElementWithIndex(int index) {
+    public Node<T> getElementWithIndex(int index) {
         if (index >= element.length) {
             throw new ArrayIndexOutOfBoundsException();
+        }
+        if (element[index] == null) {
+            return null;
         }
         return element[index];
     }

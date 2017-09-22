@@ -1,5 +1,7 @@
 package com.matthewlqm.tree;
 
+import com.matthewlqm.node.Node;
+
 /**
  * Created by huafu on 2017/9/22.
  */
@@ -26,7 +28,7 @@ public class TreeManager {
         operateTreeNode(root);
     }
 
-    private void operateTreeNode(TreeNode treeNode) {
+    private void operateTreeNode(Node treeNode) {
         System.out.print(" " + treeNode.getKey() + " ");
     }
 

@@ -1,22 +1,25 @@
 package com.matthewlqm.tree;
 
-public class BinaryTreeNode implements TreeNode {
-    private Integer key;
+import com.matthewlqm.node.AbstractNode;
+
+public class BinaryTreeNode<T> extends AbstractNode<T> {
+
+    private T key;
     private BinaryTreeNode leftNode;
     private BinaryTreeNode rightNode;
 
-    public BinaryTreeNode(Integer key) {
+    public BinaryTreeNode(T key) {
         this.key = key;
         this.leftNode = null;
         this.rightNode = null;
     }
 
     @Override
-    public Integer getKey() {
+    public T getKey() {
         return this.key;
     }
 
-    public void setKey(Integer key) {
+    public void setKey(T key) {
         this.key = key;
     }
 
