@@ -2,9 +2,6 @@ package com.matthewlqm.node;
 
 import com.matthewlqm.exception.UnimplementMethodException;
 
-/**
- * Created by huafu on 2017/9/22.
- */
 public abstract class AbstractNode<T> implements Node<T> {
 
     @Override
@@ -14,7 +11,7 @@ public abstract class AbstractNode<T> implements Node<T> {
 
     @Override
     public void setKey(T key) {
-        throw new UnimplementMethodException("AbstractNode is not implement method getKey()");
+        throw new UnimplementMethodException("AbstractNode is not implement method setKey()");
     }
 
     @Override
