@@ -6,4 +6,7 @@ public interface List<T> {
     void push(T key);
     T pop();
     int length();
+    T head();
+    T tail();
+    void printList();
 }

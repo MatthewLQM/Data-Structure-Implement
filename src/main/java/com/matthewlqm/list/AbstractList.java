@@ -29,4 +29,18 @@ public abstract class AbstractList<T> implements List<T> {
         throw new UnimplementMethodException("AbstractList is not implement method length()");
     }
 
+    @Override
+    public T head() {
+        throw new UnimplementMethodException("AbstractList is not implement method head()");
+    }
+
+    @Override
+    public T tail() {
+        throw new UnimplementMethodException("AbstractList is not implement method tail()");
+    }
+
+    @Override
+    public void printList() {
+        throw new UnimplementMethodException("AbstractList is not implement method printList()");
+    }
 }
