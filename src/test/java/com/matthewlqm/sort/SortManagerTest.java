@@ -22,6 +22,14 @@ public class SortManagerTest {
     }
 
     @Test
+    public void testSelectSort() {
+        Integer[] originArray = new Integer[]{1, 4, 3, 2, 5};
+        Integer[] selectSortArray = sortManagerManager.selectSort(originArray);
+        Integer[] expectedSortedArray = new Integer[]{1, 2, 3, 4, 5};
+        Assert.assertArrayEquals(expectedSortedArray, selectSortArray);
+    }
+
+    @Test
     public void testMergeSort() {
         Integer[] originArray = new Integer[]{1, 4, 3, 2, 5};
         Integer[] mergeSortArray = sortManagerManager.mergeSort(originArray);

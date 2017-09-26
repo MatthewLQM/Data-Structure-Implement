@@ -17,14 +17,24 @@ public class SortManager {
         return temp;
     }
 
+    public Integer[] selectSort(Integer[] originArray) {
+        Integer[] result = new Integer[originArray.length];
+        System.arraycopy(originArray, 0, result, 0, originArray.length);
+        for (int i = 0; i < result.length; i++) {
+            int j = locateLowest(result, i);
+            swapElement(result, i, j);
+        }
+        return result;
+    }
+
     public Integer[] mergeSort(Integer[] originArray) {
         if (originArray.length == 1) {
             return originArray;
         }
-        Integer[] leftArray = new Integer[originArray.length/2];
+        Integer[] leftArray = new Integer[originArray.length / 2];
         Integer[] rightArray = new Integer[originArray.length - leftArray.length];
         System.arraycopy(originArray, 0, leftArray, 0, leftArray.length);
-        System.arraycopy(originArray, originArray.length/2, rightArray, 0, rightArray.length);
+        System.arraycopy(originArray, originArray.length / 2, rightArray, 0, rightArray.length);
         Integer[] left = mergeSort(leftArray);
         Integer[] right = mergeSort(rightArray);
         return merge(left, right);
@@ -33,12 +43,10 @@ public class SortManager {
     public Integer[] bubbleSort(Integer[] originArray) {
         Integer[] result = new Integer[originArray.length];
         System.arraycopy(originArray, 0, result, 0, originArray.length);
-        for(int i = 0; i < result.length - 1; i++){
-            for(int j = i + 1; j < result.length; j++) {
-                if(result[i] > result[j]) {
-                    int temp = result[i];
-                    result[i] = result[j];
-                    result[j] = temp;
+        for (int i = 0; i < result.length - 1; i++) {
+            for (int j = i + 1; j < result.length; j++) {
+                if (result[i] > result[j]) {
+                    swapElement(result, i, j);
                 }
             }
         }
@@ -74,5 +82,20 @@ public class SortManager {
         return result;
     }
 
+    private void swapElement(Integer[] array, int i, int j) {
+        Integer temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    private int locateLowest(Integer[] array, int start) {
+        int lowIndex = start;
+        for (int i = start; i < array.length; i++) {
+            if (array[i].compareTo(array[lowIndex]) < 0) {
+                lowIndex = i;
+            }
+        }
+        return lowIndex;
+    }
 }
 
