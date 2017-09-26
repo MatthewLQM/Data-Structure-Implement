@@ -9,7 +9,6 @@
     + 冒泡排序（Bubble Sort）
     + 选择排序（Select Sort）
     + 归并排序（Merge Sort）
-    
  2. 数组
     + 数组的实现
  3. 链表
