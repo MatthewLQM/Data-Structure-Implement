@@ -32,7 +32,7 @@ public class NormalList<T> extends AbstractList<T> {
             throw new ArrayIndexOutOfBoundsException();
         }
         locate(index);
-        ListNode<T> node = new NormalListNode<>(key, iterator.getLast(), iterator) ;
+        ListNode<T> node = new NormalListNode<>(key, iterator.getLast(), iterator);
         iterator.getLast().setNext(node);
         iterator.setLast(node);
     }
@@ -87,6 +87,32 @@ public class NormalList<T> extends AbstractList<T> {
     @Override
     public int length() {
         return size;
+    }
+
+    @Override
+    public T head() {
+        if (size == 0) {
+            throw new ArrayIndexOutOfBoundsException("Normal List is empty");
+        }
+        return headNode.getKey();
+    }
+
+    @Override
+    public T tail() {
+        if (size == 0) {
+            throw new ArrayIndexOutOfBoundsException("Normal List is empty");
+        }
+        return tailNode.getKey();
+    }
+
+    @Override
+    public void printList() {
+        ListNode temp = headNode;
+        System.out.print("listBegin -> ");
+        while(temp != null) {
+            System.out.print(temp.getKey() + " -> ");
+        }
+        System.out.println("listEnd");
     }
 
     private void locate(int index) {
