@@ -14,12 +14,21 @@ public class NormalListNode<T> extends AbstractListNode<T> {
     }
 
     public NormalListNode(T key, ListNode last) {
+        if (!(last instanceof NormalListNode)) {
+            throw new WrongTypeException("Last Node is not NormalListNode");
+        }
         this.key = key;
         this.next = null;
         this.last = last;
     }
 
     public NormalListNode(T key, ListNode last, ListNode next) {
+        if (!(last instanceof NormalListNode)) {
+            throw new WrongTypeException("Last Node is not NormalListNode");
+        }
+        if (!(next instanceof NormalListNode)) {
+            throw new WrongTypeException("Next Node is not NormalListNode");
+        }
         this.key = key;
         this.next = next;
         this.last = last;
@@ -38,7 +47,7 @@ public class NormalListNode<T> extends AbstractListNode<T> {
     @Override
     public void setNext(ListNode nextNode) {
         if (nextNode instanceof NormalListNode) {
-            next = (NormalListNode) nextNode;
+            next = nextNode;
         }
         throw new WrongTypeException("Next Node is not NormalListNode");
     }
@@ -51,7 +60,7 @@ public class NormalListNode<T> extends AbstractListNode<T> {
     @Override
     public void setLast(ListNode lastNode) {
         if (lastNode instanceof NormalListNode) {
-            last = (NormalListNode) lastNode;
+            last = lastNode;
         }
         throw new WrongTypeException("Last Node is not NormalListNode");
     }
