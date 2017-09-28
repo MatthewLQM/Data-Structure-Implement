@@ -17,6 +17,11 @@ public abstract class AbstractListNode<T> extends AbstractNode<T>
     }
 
     @Override
+    public void setLast(ListNode lastNode) {
+        throw new UnimplementMethodException("AbstractListNode is not implement method setLast()");
+    }
+
+    @Override
     public ListNode getLast() {
         throw new UnimplementMethodException("AbstractListNode is not implement method getLast()");
     }
