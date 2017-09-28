@@ -2,7 +2,6 @@ package com.matthewlqm.list.listNode;
 
 import com.matthewlqm.exception.UnimplementMethodException;
 import com.matthewlqm.exception.WrongTypeException;
-import com.matthewlqm.list.List;
 
 public class SinglyLinkedListNode<T> extends AbstractListNode<T> {
 
